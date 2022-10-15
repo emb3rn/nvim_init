@@ -1,0 +1,25 @@
+{
+    "diagnostic.virtualTextCurrentLineOnly":true,
+
+    "floatFactory.floatConfig": {
+        "title":" Error: "
+    },
+	
+    "diagnostic.checkCurrentLine": true,
+    "pyright.inlayHints.variableTypes":false,
+    "pyright.inlayHints.enable":false,
+	"suggest.noselect":false,
+
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+            "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                }
+            }
+        }
+    }
+}
