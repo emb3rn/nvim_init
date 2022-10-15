@@ -1,7 +1,8 @@
 {
-    "diagnostic.virtualTextCurrentLineOnly":true,
-
-    "floatFactory.floatConfig": {
+	"diagnostic.virtualText": true,
+    "diagnostic.virtualTextCurrentLineOnly": false,
+    "diagnostic.enableMessage":false,	
+	"floatFactory.floatConfig": {
         "title":" Error: "
     },
 	
