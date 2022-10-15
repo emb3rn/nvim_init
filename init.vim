@@ -3,7 +3,7 @@ set backspace=indent,eol,start
 set mouse=a
 set timeoutlen=1000
 set ttimeoutlen=5
-:syntax off
+set noshowmode
 
 call plug#begin()
 Plug 'neoclide/coc.nvim'
@@ -12,13 +12,14 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tmsvg/pear-tree'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug '907th/vim-auto-save'
+"Plug '907th/vim-auto-save'
 Plug 'xianzhon/vim-code-runner'
 "NerdTree + Plugins
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'preservim/nerdtree'
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 " NERDTrees File highlighting
@@ -68,6 +69,9 @@ inoremap <expr><S-Up> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice.
 inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+inoremap <silent><expr> <S-Right> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 function! CheckBackspace() abort
